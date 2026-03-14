@@ -40,6 +40,7 @@ This repository should favor:
 - `OMNICORE_GENESIS.md`: source philosophy and identity document
 - `ALPHA_VISION.md`: Alpha's long-term goals, values, and direction
 - `OMNICORE_ROADMAP.md`: product direction, MVP scope, and build phases
+- `OMNICORE_LAUNCH_PLAN.md`: first monetization path, pricing, and launch sequence
 - `AGENTS.md`: operating instructions for agents and collaborators in this repo
 - `src/`: browser game logic
 - `roblox/src/`: Roblox code synced through Rojo

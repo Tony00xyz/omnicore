@@ -161,10 +161,12 @@ textarea {
 
 .product-band,
 .cta-band,
+.pricing-grid,
 .landing-grid,
 .sales-lab,
 .offer-lab,
 .proof-grid,
+.faq-grid,
 .waitlist-lab {
   display: grid;
   gap: 20px;
@@ -186,6 +188,11 @@ textarea {
 }
 
 .proof-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pricing-grid,
+.faq-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -227,6 +234,16 @@ textarea {
 .cta-form,
 .proof-panel {
   min-height: 100%;
+}
+
+.pricing-panel,
+.faq-panel {
+  min-height: 100%;
+}
+
+.pricing-panel h2 {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
 }
 
 .cta-copy {
@@ -566,8 +583,10 @@ textarea {
 @media (max-width: 1180px) {
   .product-band,
   .cta-band,
+  .pricing-grid,
   .landing-grid,
   .proof-grid,
+  .faq-grid,
   .workspace {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -577,8 +596,10 @@ textarea {
   .hero,
   .product-band,
   .cta-band,
+  .pricing-grid,
   .landing-grid,
   .proof-grid,
+  .faq-grid,
   .workspace,
   .dashboard-strip,
   .filter-bar,
