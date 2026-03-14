@@ -29,12 +29,18 @@ const waitlistSummary = document.querySelector("#waitlistSummary");
 const waitlistList = document.querySelector("#waitlistList");
 const exportWaitlistButton = document.querySelector("#exportWaitlistButton");
 const heroWaitlistForm = document.querySelector("#heroWaitlistForm");
+const productViewButton = document.querySelector("#productViewButton");
+const workspaceViewButton = document.querySelector("#workspaceViewButton");
+const jumpWorkspaceButton = document.querySelector("#jumpWorkspaceButton");
+const viewSections = document.querySelectorAll("[data-view]");
 
 const STORAGE_KEY = "omnicore-workspace-v1";
+const VIEW_KEY = "omnicore-view-mode";
 let statusTimeoutId = null;
 const viewState = {
   statusFilter: "all",
   sortMode: "score",
+  mode: loadViewMode(),
 };
 
 const detailFields = {
@@ -129,6 +135,20 @@ render();
 setStatus("Workspace ready.");
 renderSalesOutput();
 renderOfferPreview();
+
+productViewButton.addEventListener("click", () => {
+  setViewMode("product");
+});
+
+workspaceViewButton.addEventListener("click", () => {
+  setViewMode("workspace");
+  document.querySelector("#workspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+jumpWorkspaceButton.addEventListener("click", () => {
+  setViewMode("workspace");
+  document.querySelector("#workspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+});
 
 statusFilter.addEventListener("input", () => {
   viewState.statusFilter = statusFilter.value;
@@ -392,6 +412,7 @@ downloadOfferButton.addEventListener("click", () => {
 });
 
 function render() {
+  renderViewMode();
   renderIdeaList();
   renderDashboard();
   renderDetailForm();
@@ -399,6 +420,16 @@ function render() {
   renderSalesOutput();
   renderOfferPreview();
   renderWaitlist();
+}
+
+function renderViewMode() {
+  for (const section of viewSections) {
+    const shouldShow = section.dataset.view === viewState.mode;
+    section.classList.toggle("is-hidden", !shouldShow);
+  }
+
+  productViewButton.classList.toggle("is-active", viewState.mode === "product");
+  workspaceViewButton.classList.toggle("is-active", viewState.mode === "workspace");
 }
 
 function renderIdeaList() {
@@ -605,6 +636,12 @@ function saveWaitlistLead(formData, successMessage) {
   persistState();
   renderWaitlist();
   setStatus(successMessage);
+}
+
+function setViewMode(mode) {
+  viewState.mode = mode;
+  window.localStorage.setItem(VIEW_KEY, mode);
+  renderViewMode();
 }
 
 function getSelectedIdea() {
@@ -1173,6 +1210,15 @@ function normalizeWaitlistEntry(entry) {
     interest: typeof entry.interest === "string" ? entry.interest : "General updates",
     createdAt: typeof entry.createdAt === "string" ? entry.createdAt : new Date().toISOString(),
   };
+}
+
+function loadViewMode() {
+  try {
+    const storedValue = window.localStorage.getItem(VIEW_KEY);
+    return storedValue === "workspace" ? "workspace" : "product";
+  } catch (error) {
+    return "product";
+  }
 }
 
 function clampScore(value) {

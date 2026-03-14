@@ -39,6 +39,14 @@
           <a href="#sales">Sales Lab</a>
           <a href="#waitlist">Waitlist</a>
         </nav>
+        <div class="view-switch" aria-label="View mode">
+          <button class="button button-small" id="productViewButton" type="button">
+            Product view
+          </button>
+          <button class="button button-small" id="workspaceViewButton" type="button">
+            Workspace view
+          </button>
+        </div>
       </header>
 
       <section class="hero">
@@ -137,7 +145,7 @@
         </form>
       </section>
 
-      <section class="workspace" id="workspace" aria-label="OmniCore workspace">
+      <section class="workspace workspace-section" id="workspace" data-view="workspace" aria-label="OmniCore workspace">
         <aside class="panel panel-sidebar">
           <div class="panel-header">
             <p class="section-label">Alpha Brief</p>
@@ -445,7 +453,7 @@
         </article>
       </section>
 
-      <section class="sales-lab" id="sales" aria-label="Sales page generator">
+      <section class="sales-lab workspace-section" id="sales" data-view="workspace" aria-label="Sales page generator">
         <article class="panel sales-panel">
           <div class="panel-header">
             <p class="section-label">Sales Lab</p>
@@ -465,7 +473,7 @@
         </article>
       </section>
 
-      <section class="offer-lab" aria-label="Offer card generator">
+      <section class="offer-lab workspace-section" data-view="workspace" aria-label="Offer card generator">
         <article class="panel offer-panel">
           <div class="panel-header">
             <p class="section-label">Offer Card</p>
@@ -520,6 +528,20 @@
           <div class="waitlist-summary" id="waitlistSummary"></div>
           <div class="waitlist-list" id="waitlistList"></div>
         </article>
+      </section>
+
+      <section class="product-cta-strip" data-view="product" aria-label="Product to workspace bridge">
+        <div class="panel bridge-panel">
+          <p class="section-label">Builder Mode</p>
+          <h2>Want to see the execution engine?</h2>
+          <p>
+            OmniCore also includes an internal workspace for idea scoring, sprint
+            planning, sales copy generation, and offer shaping.
+          </p>
+          <button class="button button-primary" id="jumpWorkspaceButton" type="button">
+            Open workspace view
+          </button>
+        </div>
       </section>
 
       <footer class="site-footer">

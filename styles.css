@@ -72,9 +72,18 @@ textarea {
   gap: 14px;
 }
 
+.view-switch {
+  display: flex;
+  gap: 10px;
+}
+
 .topnav a {
   padding: 8px 10px;
   border: 2px solid transparent;
+}
+
+.button-small {
+  padding: 8px 12px;
 }
 
 .hero {
@@ -194,6 +203,19 @@ textarea {
 .pricing-grid,
 .faq-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-cta-strip {
+  margin-bottom: 20px;
+}
+
+.bridge-panel h2 {
+  margin: 0 0 12px;
+}
+
+.bridge-panel p {
+  margin: 0 0 16px;
+  line-height: 1.6;
 }
 
 .product-copy,
@@ -325,6 +347,15 @@ textarea {
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid rgba(44, 39, 31, 0.2);
+}
+
+[data-view].is-hidden {
+  display: none;
+}
+
+.button.is-active {
+  background: var(--accent);
+  color: #fff8ef;
 }
 
 .site-footer {
@@ -632,7 +663,8 @@ textarea {
   .sales-actions,
   .offer-actions,
   .waitlist-actions,
-  .cta-points {
+  .cta-points,
+  .view-switch {
     flex-direction: column;
   }
 
