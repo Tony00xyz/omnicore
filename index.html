@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmniCore</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">OmniCore</p>
+          <h1>Strategy-to-execution workspace for Alpha.</h1>
+          <p class="hero-text">
+            Capture ideas, pressure-test them, rank them by leverage, and turn
+            them into practical next actions.
+          </p>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-label">Current Objective</p>
+          <p class="hero-card-value">Reach 500 EUR/month online income.</p>
+          <p class="hero-card-note">
+            Build assets that increase freedom, capability, and long-term
+            independence.
+          </p>
+        </div>
+      </section>
+
+      <section class="product-band" aria-label="OmniCore product positioning">
+        <div class="product-copy">
+          <p class="section-label">Product Direction</p>
+          <h2>OmniCore can become a sellable operating system for solo builders.</h2>
+          <p>
+            The same tool Alpha uses internally can evolve into a product for
+            creators, freelancers, and independent operators who need more
+            clarity, better prioritization, and faster execution.
+          </p>
+        </div>
+        <div class="product-offer">
+          <p class="section-label">First Offer</p>
+          <h3>OmniCore Solo Builder OS</h3>
+          <ul class="signal-list">
+            <li>Idea capture and strategic filtering</li>
+            <li>Income-readiness scoring</li>
+            <li>7-day sprint generation</li>
+            <li>Exportable planning outputs</li>
+          </ul>
+        </div>
+        <div class="product-price">
+          <p class="section-label">Launch Concept</p>
+          <p class="price-tag">19-49 EUR</p>
+          <p>Start as a digital system first, then grow into a real app.</p>
+        </div>
+      </section>
+
+      <section class="cta-band" aria-label="Primary launch call to action">
+        <div class="cta-copy">
+          <p class="section-label">Early Access</p>
+          <h2>Join the first wave of builders testing OmniCore.</h2>
+          <p>
+            Get early access to the Solo Builder OS, follow the build in public,
+            and see how strategy turns into execution and income-oriented systems.
+          </p>
+          <div class="cta-points">
+            <span>Early product updates</span>
+            <span>First launch pricing</span>
+            <span>Direct feedback loop</span>
+          </div>
+        </div>
+        <form id="heroWaitlistForm" class="cta-form">
+          <label class="field">
+            <span>Email</span>
+            <input id="heroWaitlistEmail" name="email" type="email" maxlength="120" required />
+          </label>
+          <label class="field">
+            <span>Interest</span>
+            <select id="heroWaitlistInterest" name="interest">
+              <option value="OmniCore Solo Builder OS">OmniCore Solo Builder OS</option>
+              <option value="Toolkit">Toolkit</option>
+              <option value="Micro SaaS">Micro SaaS</option>
+              <option value="General updates">General updates</option>
+            </select>
+          </label>
+          <button class="button button-primary" type="submit">Join early access</button>
+        </form>
+      </section>
+
+      <section class="workspace" aria-label="OmniCore workspace">
+        <aside class="panel panel-sidebar">
+          <div class="panel-header">
+            <p class="section-label">Alpha Brief</p>
+            <h2>Strategic filter</h2>
+          </div>
+          <ul class="signal-list">
+            <li>Favor simple systems with compounding value.</li>
+            <li>Prefer products over time-heavy service work.</li>
+            <li>Bias toward online income and location independence.</li>
+            <li>Ship smaller versions before expanding scope.</li>
+          </ul>
+
+          <div class="goal-block">
+            <p class="section-label">Active Goals</p>
+            <div class="goal-chip">500 EUR/month online income</div>
+            <div class="goal-chip">Relocate to the Philippines</div>
+            <div class="goal-chip">Build OmniCore full time</div>
+          </div>
+
+          <form id="ideaForm" class="idea-form">
+            <div class="panel-header">
+              <p class="section-label">Idea Capture</p>
+              <h2>Add new idea</h2>
+            </div>
+            <label class="field">
+              <span>Title</span>
+              <input id="newIdeaTitle" name="title" type="text" maxlength="80" required />
+            </label>
+            <label class="field">
+              <span>Type</span>
+              <select id="newIdeaType" name="type">
+                <option value="Product">Product</option>
+                <option value="System">System</option>
+                <option value="Automation">Automation</option>
+                <option value="Toolkit">Toolkit</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Quick note</span>
+              <textarea
+                id="newIdeaSummary"
+                name="summary"
+                rows="3"
+                maxlength="220"
+                placeholder="What does this idea do?"
+              ></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Add idea</button>
+          </form>
+        </aside>
+
+        <section class="panel panel-list">
+          <div class="panel-header">
+            <p class="section-label">Idea Inbox</p>
+            <h2>Prioritized projects</h2>
+          </div>
+          <div class="dashboard-strip" id="dashboardStrip"></div>
+          <div class="filter-bar">
+            <label class="field field-inline">
+              <span>Status filter</span>
+              <select id="statusFilter" name="statusFilter">
+                <option value="all">All</option>
+                <option value="idea">Idea</option>
+                <option value="researching">Researching</option>
+                <option value="building">Building</option>
+                <option value="selling">Selling</option>
+                <option value="validated">Validated</option>
+                <option value="paused">Paused</option>
+              </select>
+            </label>
+            <label class="field field-inline">
+              <span>Sort by</span>
+              <select id="sortMode" name="sortMode">
+                <option value="score">Strategic score</option>
+                <option value="income">Income readiness</option>
+                <option value="status">Workflow status</option>
+                <option value="title">Title</option>
+              </select>
+            </label>
+          </div>
+          <div class="idea-list" id="ideaList" role="list"></div>
+        </section>
+
+        <section class="panel panel-detail">
+          <div class="panel-header">
+            <p class="section-label">Project Focus</p>
+            <h2 id="detailTitle">Select an idea</h2>
+          </div>
+
+          <form id="detailForm" class="detail-form">
+            <div class="detail-grid">
+              <label class="field">
+                <span>Objective</span>
+                <textarea id="objective" name="objective" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Target user</span>
+                <input id="targetUser" name="targetUser" type="text" />
+              </label>
+              <label class="field">
+                <span>Monetization path</span>
+                <input id="monetization" name="monetization" type="text" />
+              </label>
+              <label class="field">
+                <span>Time to first validation</span>
+                <input id="validationTime" name="validationTime" type="text" />
+              </label>
+              <label class="field">
+                <span>Offer template</span>
+                <select id="offerTemplate" name="offerTemplate">
+                  <option value="digital-product">Digital product</option>
+                  <option value="toolkit">Toolkit</option>
+                  <option value="micro-saas">Micro SaaS</option>
+                  <option value="service-lite">Service-lite</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Workflow status</span>
+                <select id="workflowStatus" name="workflowStatus">
+                  <option value="idea">Idea</option>
+                  <option value="researching">Researching</option>
+                  <option value="building">Building</option>
+                  <option value="selling">Selling</option>
+                  <option value="validated">Validated</option>
+                  <option value="paused">Paused</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="score-grid">
+              <label class="field">
+                <span>Income potential</span>
+                <input id="incomeScore" name="incomeScore" type="range" min="1" max="5" />
+              </label>
+              <label class="field">
+                <span>Speed to launch</span>
+                <input id="speedScore" name="speedScore" type="range" min="1" max="5" />
+              </label>
+              <label class="field">
+                <span>Automation leverage</span>
+                <input id="automationScore" name="automationScore" type="range" min="1" max="5" />
+              </label>
+              <label class="field">
+                <span>Strategic value</span>
+                <input id="strategyScore" name="strategyScore" type="range" min="1" max="5" />
+              </label>
+            </div>
+
+            <div class="detail-grid detail-grid-wide">
+              <label class="field">
+                <span>Assumptions</span>
+                <textarea id="assumptions" name="assumptions" rows="4"></textarea>
+              </label>
+              <label class="field">
+                <span>Risks</span>
+                <textarea id="risks" name="risks" rows="4"></textarea>
+              </label>
+              <label class="field">
+                <span>Next actions</span>
+                <textarea id="nextActions" name="nextActions" rows="4"></textarea>
+              </label>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel panel-output">
+          <div class="panel-header">
+            <p class="section-label">Structured Output</p>
+            <h2>Decision snapshot</h2>
+          </div>
+
+          <div class="output-score">
+            <p class="section-label">Composite score</p>
+            <p class="score-value" id="compositeScore">0 / 20</p>
+            <p class="income-readiness" id="incomeReadiness">Income readiness: --</p>
+          </div>
+
+          <div class="output-actions">
+            <button class="button" id="copySummaryButton" type="button">
+              Copy summary
+            </button>
+            <button class="button" id="importIdeasButton" type="button">
+              Import JSON
+            </button>
+            <button class="button" id="exportIdeasButton" type="button">
+              Export JSON
+            </button>
+          </div>
+
+          <input id="importFileInput" type="file" accept="application/json" hidden />
+          <p class="save-status" id="saveStatus" aria-live="polite"></p>
+          <div class="output-card" id="outputCard"></div>
+          <div class="output-card output-card-secondary" id="incomeCard"></div>
+          <div class="output-card output-card-plan" id="planCard"></div>
+        </section>
+      </section>
+
+      <section class="landing-grid" aria-label="OmniCore landing materials">
+        <article class="panel landing-panel">
+          <div class="panel-header">
+            <p class="section-label">Who It's For</p>
+            <h2>Ideal first users</h2>
+          </div>
+          <ul class="signal-list">
+            <li>Solo builders overwhelmed by too many ideas</li>
+            <li>Creators who need a practical planning system</li>
+            <li>Freelancers who want to turn thinking into assets</li>
+            <li>Independent operators building toward online income</li>
+          </ul>
+        </article>
+
+        <article class="panel landing-panel">
+          <div class="panel-header">
+            <p class="section-label">Core Promise</p>
+            <h2>What OmniCore helps them do</h2>
+          </div>
+          <ul class="signal-list">
+            <li>Choose better ideas faster</li>
+            <li>Reduce wasted effort on weak directions</li>
+            <li>Move from planning to action in days, not weeks</li>
+            <li>Build products with stronger income potential</li>
+          </ul>
+        </article>
+
+        <article class="panel landing-panel">
+          <div class="panel-header">
+            <p class="section-label">Launch Copy</p>
+            <h2>Starter messaging</h2>
+          </div>
+          <p class="landing-copy" id="landingCopy">
+            OmniCore helps solo builders turn scattered ideas into structured
+            plans, focused sprints, and income-oriented projects.
+          </p>
+          <button class="button" id="copyLandingButton" type="button">
+            Copy launch copy
+          </button>
+        </article>
+      </section>
+
+      <section class="proof-grid" aria-label="Trust and launch proof">
+        <article class="panel proof-panel">
+          <div class="panel-header">
+            <p class="section-label">Why Now</p>
+            <h2>The market fit</h2>
+          </div>
+          <p>
+            More solo builders are using AI, but most still lack a clear system
+            for deciding what to build, how to validate it, and how to connect
+            strategy to actual income.
+          </p>
+        </article>
+        <article class="panel proof-panel">
+          <div class="panel-header">
+            <p class="section-label">What Makes It Different</p>
+            <h2>Not just prompts or notes</h2>
+          </div>
+          <p>
+            OmniCore combines strategic filtering, monetization pressure, sprint
+            planning, and product packaging in one workspace instead of scattering
+            them across separate tools.
+          </p>
+        </article>
+        <article class="panel proof-panel">
+          <div class="panel-header">
+            <p class="section-label">Launch Path</p>
+            <h2>Simple first, stronger later</h2>
+          </div>
+          <p>
+            Start with a paid digital system, validate demand, then grow it into
+            a more powerful software product once real usage and feedback exist.
+          </p>
+        </article>
+      </section>
+
+      <section class="sales-lab" aria-label="Sales page generator">
+        <article class="panel sales-panel">
+          <div class="panel-header">
+            <p class="section-label">Sales Lab</p>
+            <h2>Offer copy from the selected idea</h2>
+          </div>
+          <div class="sales-actions">
+            <button class="button button-primary" id="generateSalesButton" type="button">
+              Generate sales copy
+            </button>
+            <button class="button" id="copySalesButton" type="button">
+              Copy sales copy
+            </button>
+          </div>
+          <div class="sales-output" id="salesOutput">
+            Select an idea, then generate a rough product page from its strategy data.
+          </div>
+        </article>
+      </section>
+
+      <section class="offer-lab" aria-label="Offer card generator">
+        <article class="panel offer-panel">
+          <div class="panel-header">
+            <p class="section-label">Offer Card</p>
+            <h2>One-page product summary</h2>
+          </div>
+          <div class="offer-actions">
+            <button class="button button-primary" id="generateOfferButton" type="button">
+              Generate offer card
+            </button>
+            <button class="button" id="copyOfferButton" type="button">
+              Copy offer card
+            </button>
+            <button class="button" id="downloadOfferButton" type="button">
+              Download markdown
+            </button>
+          </div>
+          <div class="offer-preview" id="offerPreview">
+            Select an idea to turn it into a compact, sellable one-page offer.
+          </div>
+        </article>
+      </section>
+
+      <section class="waitlist-lab" aria-label="Waitlist and interest capture">
+        <article class="panel waitlist-panel">
+          <div class="panel-header">
+            <p class="section-label">Waitlist</p>
+            <h2>Public interest capture</h2>
+          </div>
+          <form id="waitlistForm" class="waitlist-form">
+            <label class="field">
+              <span>Name</span>
+              <input id="waitlistName" name="name" type="text" maxlength="80" />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input id="waitlistEmail" name="email" type="email" maxlength="120" required />
+            </label>
+            <label class="field">
+              <span>Interest</span>
+              <select id="waitlistInterest" name="interest">
+                <option value="OmniCore Solo Builder OS">OmniCore Solo Builder OS</option>
+                <option value="Toolkit">Toolkit</option>
+                <option value="Micro SaaS">Micro SaaS</option>
+                <option value="General updates">General updates</option>
+              </select>
+            </label>
+            <div class="waitlist-actions">
+              <button class="button button-primary" type="submit">Add lead</button>
+              <button class="button" id="exportWaitlistButton" type="button">Export CSV</button>
+            </div>
+          </form>
+          <div class="waitlist-summary" id="waitlistSummary"></div>
+          <div class="waitlist-list" id="waitlistList"></div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
