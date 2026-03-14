@@ -3,11 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OmniCore</title>
+    <title>OmniCore | Strategy-to-Execution OS for Solo Builders</title>
+    <meta
+      name="description"
+      content="OmniCore helps solo builders turn ideas into plans, sprints, and income-oriented products."
+    />
+    <meta
+      property="og:title"
+      content="OmniCore | Strategy-to-Execution OS for Solo Builders"
+    />
+    <meta
+      property="og:description"
+      content="Capture ideas, filter by leverage, generate sprints, and shape sellable offers in one workspace."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tony00xyz.github.io/omnicore/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="OmniCore | Strategy-to-Execution OS for Solo Builders"
+    />
+    <meta
+      name="twitter:description"
+      content="A strategy workspace for solo builders who want more clarity, momentum, and income-oriented execution."
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="app-shell">
+      <header class="topbar" aria-label="Site navigation">
+        <a class="brand" href="#top">OmniCore</a>
+        <nav class="topnav">
+          <a href="#offer">Offer</a>
+          <a href="#workspace">Workspace</a>
+          <a href="#sales">Sales Lab</a>
+          <a href="#waitlist">Waitlist</a>
+        </nav>
+      </header>
+
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">OmniCore</p>
@@ -27,7 +60,7 @@
         </div>
       </section>
 
-      <section class="product-band" aria-label="OmniCore product positioning">
+      <section class="product-band" id="offer" aria-label="OmniCore product positioning">
         <div class="product-copy">
           <p class="section-label">Product Direction</p>
           <h2>OmniCore can become a sellable operating system for solo builders.</h2>
@@ -86,7 +119,7 @@
         </form>
       </section>
 
-      <section class="workspace" aria-label="OmniCore workspace">
+      <section class="workspace" id="workspace" aria-label="OmniCore workspace">
         <aside class="panel panel-sidebar">
           <div class="panel-header">
             <p class="section-label">Alpha Brief</p>
@@ -361,7 +394,7 @@
         </article>
       </section>
 
-      <section class="sales-lab" aria-label="Sales page generator">
+      <section class="sales-lab" id="sales" aria-label="Sales page generator">
         <article class="panel sales-panel">
           <div class="panel-header">
             <p class="section-label">Sales Lab</p>
@@ -404,7 +437,7 @@
         </article>
       </section>
 
-      <section class="waitlist-lab" aria-label="Waitlist and interest capture">
+      <section class="waitlist-lab" id="waitlist" aria-label="Waitlist and interest capture">
         <article class="panel waitlist-panel">
           <div class="panel-header">
             <p class="section-label">Waitlist</p>
@@ -437,6 +470,13 @@
           <div class="waitlist-list" id="waitlistList"></div>
         </article>
       </section>
+
+      <footer class="site-footer">
+        <p>OmniCore is being built in public as a strategy-to-execution operating system for solo builders.</p>
+        <a href="https://github.com/Tony00xyz/omnicore" target="_blank" rel="noreferrer">
+          View the GitHub repo
+        </a>
+      </footer>
     </main>
 
     <script type="module" src="./src/main.js"></script>
